@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="studypal.css">
+    <title>StudyPal</title>
+</head>
+<body>
+    <div id="fullcontent">
+        <div id="mainblock">
+        <nav id = "navbar">
+        <h2 id="StudyPal">StudyPal</h2>
+        <div id = "navbarcontrols">
+        <a href="studypal.html">Home</a>
+        <a href="instruction.html">about</a>
+        </div>
+
+    </nav>
+
+        <div id="popup" style="display: none;">
+        <span onclick="popupClose()">
+            <img src="close_icon.svg" alt="closebutton">
+        </span>
+        <label for="sessionblock">Enter a name : </label>
+        <input type="text" id="sessionname" placeholder="eg.database">
+
+        <div>
+        <button id="createsession" onclick="popupCreate()">Create</button>
+        <button id="cancelsession" onclick="popupClose()">Cancel</button>
+        </div>
+        
+    </div>
+
+
+    <div id="sessions" >
+        <div id="notepad" style="display: none;">
+            <span onclick="notepadClose()">
+            <img src="close_icon.svg" alt="closebutton">
+            </span>
+        <textarea name="text" id="notes" spellcheck="true" placeholder="Lets get started..."></textarea>
+        <button id="save" onclick="notepadSave()">: Save</button>
+        <button id="close" onclick = "notepadClose()">x Close</button>
+        <button id="deleteNotes" onclick = "notepadDelete()">Delete</button>
+
+        </div>
+        <div id="demo" class = "sessionblock" onclick="demoNotes()">Demo</div>
+        <div id="next" class = "sessionblock" onclick="popupInitiate()">+</div>
+    </div>
+    </div>
+
+    <div id="secondaryblock">
+        <div id="timers" class = "secondaryblocks">
+            <div>
+                <img src="pomodoro_icon.png" alt="pomodoro" width="30%" onclick="document.getElementById('pomoSection').style.display = 'block';">
+            <p>Pomodoro timer</p>
+            </div>
+            <div id = "pomoSection" style="display: none;">
+                <span onclick="pomoSectionclose()">
+            <img src="close_icon.svg" alt="closebutton" onclick="pomoSectionclose()">
+            </span>
+            <div id = "pomoSectioncontrols">
+                <img src="pomodoro_icon.png" alt="pomodoro" width="40%">
+                <button id="pomofocus" onclick="loadPomo('focus')">Focus</button>
+                <button id="pomostandard" onclick = 'loadPomo("standard")'>Standard</button>
+            </div>
+                
+            </div>
+
+
+            <div id="pomoTimer" style="display: none;">
+                <span onclick="closepomoTimer()">
+            <img src="close_icon.svg" alt="closebutton" onclick="closepomoTimer()">
+            </span>
+                <div id = "pomoTimerdiv">
+                    
+                    <p  id = "pomoClock">00:00:00</p>
+                </div>
+
+                <button id="startPomo" onclick="updateState()"></button>
+                <button id="pomoReset" onclick="reset()">Reset</button>
+            </div>
+            
+            <div>
+                <img src="timer_icon.webp" alt="timer" width="30%" onclick="loadStopwatch()">
+            <p onclick="loadStopwatch()">Stopwatch</p>
+            </div>
+
+            <div id="stopwatchSection" style="display: none;" >
+
+                <span  onclick="closeStopwatch()">
+            <img src="close_icon.svg" alt="closebutton" onclick="closeStopwatch()">
+            </span>
+
+                <div id="stopwatchContainer">
+                <p id="stopwatchClock">00:00</p>
+
+                </div>
+                    <button id="stopwatchState" onclick="stopwatchState()"></button>
+                    <button id="stopwatchReset" onclick="stopwatchReset()"></button>
+            </div>
+
+
+            
+        </div>
+
+        <div id="studyhelper" class = "secondaryblocks">
+            <input type="text" placeholder="Enter your stuff buddy">
+            <button id = "sendQuestion">
+                <img src="send_icon.svg" alt="send_icon" >
+            </button>
+
+            <p id="answer">🧐</p>
+        </div>
+    </div>
+    </div>
+
+    
+    
+
+    
+</body>
+<script src="studypal.js" defer></script>
+<script src="timer.js" defer></script> <!--so defer basically ask it to wait till DOM is loaded to start loading ig -->
+</html>

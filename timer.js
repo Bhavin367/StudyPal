@@ -59,7 +59,7 @@ function updateState(){
         id = setInterval(updateTime,100);
         isRunning = true ; 
 
-        controlButton.style.backgroundImage = "url(pause_button.svg)";
+        controlButton.style.backgroundImage = "url(icons/pause_button.svg)";
 
         if (runDuration == focusTime || runDuration == standardTime){
             pomotimerdiv.style.boxShadow = "0 0 0.5rem green";
@@ -69,7 +69,7 @@ function updateState(){
     }
 }   else {
     isRunning = false ; 
-    controlButton.style.backgroundImage = "url(start_button.svg)";
+    controlButton.style.backgroundImage = "url(icons/start_button.svg)";
     clearInterval(id);
     pomotimerdiv.style.boxShadow = '0 0 0.5rem red';
 
@@ -88,7 +88,7 @@ function updateTime(){
         clearInterval(id);
         timer.textContent = "00:00";
         isRunning = false ; 
-        controlButton.style.backgroundImage = "url(start_button.svg)";
+        controlButton.style.backgroundImage = "url(icons/start_button.svg)";
         runDuration = breakDuration ; 
         updateState(); 
         return ; 
@@ -108,7 +108,7 @@ function reset(){
     isRunning = false ; 
     runDuration = currentMode;
     timer.textContent = "00:00";
-    controlButton.style.backgroundImage = "url(start_button.svg)";
+    controlButton.style.backgroundImage = "url(icons/start_button.svg)";
     elapsedTime = 0 ; 
     clearInterval(id);
     pomotimerdiv.style.boxShadow = "0 0 0 white"  ; 
@@ -144,13 +144,13 @@ function stopwatchState(){
         watchstartTime = Date.now() - watchelapsedTime;
         iswatchRunning = true ; 
         watchId = setInterval(updatewatchTimer,1000);
-        stopwatchStatecontrol.style.backgroundImage = `url(pause_button.svg)`;
+        stopwatchStatecontrol.style.backgroundImage = `url(icons/pause_button.svg)`;
 
     }
     else {
         iswatchRunning = false ; 
         clearInterval(watchId);
-        stopwatchStatecontrol.style.backgroundImage = `url(start_button.svg)`;
+        stopwatchStatecontrol.style.backgroundImage = `url(icons/start_button.svg)`;
     }
 
 }
@@ -173,6 +173,6 @@ function stopwatchReset(){
     watchelapsedTime = 0 ; 
     iswatchRunning = false ; 
     stopwatchClock.textContent = "00:00";
-    stopwatchStatecontrol.style.backgroundImage = "url(start_button.svg)";
+    stopwatchStatecontrol.style.backgroundImage = "url(icons/start_button.svg)";
 
 }

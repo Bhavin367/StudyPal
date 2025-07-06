@@ -481,7 +481,7 @@ a:hover {
 }
 
 #startPomo{
-    background-image: url(start_button.svg);
+    background-image: url(icons/start_button.svg);
     background-position: center;
     background-repeat: no-repeat;
     width: 2rem;
@@ -581,11 +581,11 @@ a:hover {
 
 
 #stopwatchState{
-    background-image: url(start_button.svg);
+    background-image: url(icons/start_button.svg);
 
 }
 
 
 #stopwatchReset{
-    background-image: url(reset_Button.svg);
+    background-image: url(icons/reset_Button.svg);
 }

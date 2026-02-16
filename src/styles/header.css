@@ -1,0 +1,22 @@
+#header {
+  border: 1px solid ;
+}
+
+#header div {
+  margin-left : 2vh;
+  margin-right : 2vh; 
+}
+
+.headerTitle {
+  font-size : 5vh;
+  color : var(--primary-color) ; 
+  font-family : monospace;
+  margin : 0.2vh
+}
+
+.welcomeText {
+  font-size : 1.7vh ; 
+  font-family : monospace ;
+  color : var(--text-color) ;  
+}
+
